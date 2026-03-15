@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f8f4ef;
+  --text: #1f1515;
+  --strong: #2f1212;
+  --muted: #6f5a5a;
+  --hero-panel: linear-gradient(145deg, #310e0e 0%, #5a1f1f 48%, #8a3737 100%);
+  --surface: rgba(255, 255, 255, 0.8);
+  --border: rgba(122, 18, 18, 0.22);
+}
+
+:root[data-theme="dark"] {
+  --bg: #120d0d;
+  --text: #f9f2e3;
+  --strong: #ffe4af;
+  --muted: #d4c09c;
+  --hero-panel: linear-gradient(145deg, #1d1610 0%, #38260e 45%, #6d4512 100%);
+  --surface: rgba(31, 23, 15, 0.78);
+  --border: rgba(246, 176, 66, 0.3);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-sora);
+  --font-body: var(--font-plex);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(122, 18, 18, 0.2), transparent 38%),
+    radial-gradient(circle at 92% 8%, rgba(246, 176, 66, 0.18), transparent 42%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+}
+
+.section-shell {
+  width: min(1200px, calc(100% - 2.4rem));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title-xl {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.1rem, 3vw, 3.4rem);
+  line-height: 1.06;
+  color: var(--strong);
+  text-wrap: balance;
+}
+
+.title-lg {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+  line-height: 1.12;
+  color: var(--strong);
+}
+
+.btn-primary,
+.btn-secondary {
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: transform 180ms ease, opacity 180ms ease, border-color 180ms ease;
+}
+
+.btn-primary {
+  background: linear-gradient(130deg, #7a1212, #a22f2f);
+  color: #fffaf4;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--strong);
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+
+.panel,
+.bento-card {
+  border-radius: 1.1rem;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  padding: 1.2rem;
+}
+
+.ticker {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.66rem 0;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.ticker-track {
+  display: inline-flex;
+  min-width: max-content;
+  animation: ticker-move 26s linear infinite;
+}
+
+.ticker-item {
+  margin-inline: 1.1rem;
+  font-size: 0.82rem;
+  color: var(--strong);
+}
+
+.icon-orb {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 30%, #fff1cf 0%, #f6b042 36%, #7a1212 100%);
+  box-shadow: 0 0 18px rgba(246, 176, 66, 0.48);
+}
+
+.hero-fallback {
+  background: var(--hero-panel);
+}
+
+.parallax-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url("/fot-parallax-fallback.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.8;
+}
+
+@keyframes ticker-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .section-shell {
+    width: min(1200px, calc(100% - 1.4rem));
+  }
 }
