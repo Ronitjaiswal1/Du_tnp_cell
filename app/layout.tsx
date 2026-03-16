@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
-import { Sora, IBM_Plex_Sans } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
-  variable: "--font-sora",
-  subsets: ["latin"],
-});
-
-const plex = IBM_Plex_Sans({
-  variable: "--font-plex",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["700", "900"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
-  title: "Faculty of Technology DU | Training & Placement Cell",
+  title: "Pioneer Portal | Faculty of Technology, University of Delhi",
   description:
-    "High-conversion recruiter landing experience for the inaugural batch at Faculty of Technology, University of Delhi.",
+    "Home to the Pioneers of Faculty of Technology, University of Delhi. Redefining engineering excellence since inception.",
 };
 
 export default function RootLayout({
@@ -26,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} ${plex.variable} antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>

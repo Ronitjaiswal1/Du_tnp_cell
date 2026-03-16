@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+Meshy_AI_Tech_Circuit_Campus_0315231537_generate.glb
+dev-server.log
