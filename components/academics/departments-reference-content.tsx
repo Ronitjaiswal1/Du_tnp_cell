@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 const departmentsHtml = `
-<main class="max-w-7xl mx-auto px-6 py-12 bg-slate-50">
+<main id="departments-content" class="max-w-7xl mx-auto px-6 py-12 bg-antique-white text-slate-700">
   <section class="mb-16">
     <h1 class="serif-title text-5xl md:text-7xl text-brand-maroon mb-4">Academic Departments</h1>
     <p class="text-xl text-slate-600 max-w-2xl">Discover our specialized engineering tracks, state-of-the-art curriculum, and the distinguished faculty shaping the next generation of technology leaders.</p>
@@ -316,7 +316,15 @@ const departmentsHtml = `
 <footer class="bg-brand-maroon border-t-8 border-brand-gold">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-8 py-12 max-w-7xl mx-auto">
     <div class="space-y-4">
-      <div class="text-lg font-bold text-white uppercase tracking-widest">Faculty of Technology</div>
+      <div class="flex items-center gap-3">
+        <div class="h-12 w-12 overflow-hidden rounded-full border border-maroon/20 bg-white shadow-sm">
+          <img src="/du_logo.png" alt="DU logo" class="h-full w-full object-cover" />
+        </div>
+        <div class="leading-none">
+          <p class="font-serif text-lg sm:text-2xl font-bold text-white">Faculty of Technology</p>
+          <p class="mt-1 text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-300">University of Delhi</p>
+        </div>
+      </div>
       <p class="text-slate-300 font-sans text-sm leading-relaxed">
         University of Delhi, North Campus,<br />
         Delhi - 110007, India

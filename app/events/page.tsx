@@ -1,10 +1,10 @@
 import { EventsCta } from "@/components/second-page/events-cta";
 import { EventsFooter } from "@/components/second-page/events-footer";
 import { EventsHero } from "@/components/second-page/events-hero";
-import { EventsNav } from "@/components/second-page/events-nav";
 import { ExcellenceGallery } from "@/components/second-page/excellence-gallery";
 import { LegacyTimeline } from "@/components/second-page/legacy-timeline";
 import { UpcomingEvents } from "@/components/second-page/upcoming-events";
+import { SiteNav } from "@/components/shared/site-nav";
 
 export const metadata = {
   title: "Events | Faculty of Technology, University of Delhi",
@@ -14,7 +14,7 @@ export const metadata = {
 export default function EventsPage() {
   return (
     <main className="bg-antique-white text-slate-900">
-      <EventsNav />
+      <SiteNav activePage="events" />
       <EventsHero />
       <UpcomingEvents />
       <LegacyTimeline />

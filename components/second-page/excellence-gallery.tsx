@@ -6,7 +6,7 @@ export function ExcellenceGallery() {
       <div className="mb-16 text-center">
         <h3 className="font-serif text-4xl font-bold text-maroon">Moments of Excellence</h3>
         <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-          Capture the spirit of the faculty, from breakthrough lab moments to podium finishes.
+          Highlights from DU and FoT events, including Literature Festival, GeeksforGeeks hackathon culture, and Viksit Bharat activities.
         </p>
       </div>
 

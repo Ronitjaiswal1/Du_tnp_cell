@@ -6,11 +6,14 @@ export function SiteFooter() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="h-8 w-8 overflow-hidden rounded-full border border-maroon/20 bg-white">
-                <Image src="/fo_logo.png" alt="FoT logo" width={32} height={32} className="h-full w-full object-cover" />
+            <div className="mb-6 flex items-center gap-3">
+              <div className="h-12 w-12 overflow-hidden rounded-full border border-maroon/20 bg-white shadow-sm">
+                <Image src="/du_logo.png" alt="DU logo" width={48} height={48} className="h-full w-full object-cover" />
               </div>
-              <span className="font-serif text-maroon font-bold text-lg">Faculty of Technology</span>
+              <div className="leading-none">
+                <p className="font-serif text-lg sm:text-2xl font-bold text-[#8f1d1d]">Faculty of Technology</p>
+                <p className="mt-1 text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b06860]">University of Delhi</p>
+              </div>
             </div>
             <p className="text-gray-500 max-w-sm">
               Dedicated to fostering a culture of technical innovation and academic rigor at the heart of

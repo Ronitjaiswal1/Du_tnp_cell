@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLeadCapture } from "@/components/providers/lead-capture-provider";
 
 const accordionItems = [
   {
@@ -22,6 +23,7 @@ const accordionItems = [
 
 export function RecruiterFunnel() {
   const [openIndex, setOpenIndex] = useState(0);
+  const { openLeadCapture } = useLeadCapture();
 
   return (
     <section className="relative min-h-screen flex flex-col md:flex-row overflow-hidden bg-black" id="careers">
@@ -69,6 +71,7 @@ export function RecruiterFunnel() {
         <div className="mt-12">
           <button
             className="bg-maroon text-antique-white px-10 py-4 rounded-lg font-bold hover:bg-black transition-all"
+            onClick={() => openLeadCapture({ intent: "download_brochure", source: "recruiter_funnel" })}
             type="button"
           >
             Download Placement Brochure

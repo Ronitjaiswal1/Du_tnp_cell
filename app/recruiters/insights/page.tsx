@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { RecruitersNav } from "@/components/recruiters/recruiters-nav";
 import { SiteFooter } from "@/components/sections/site-footer";
+import { SiteNav } from "@/components/shared/site-nav";
 
 export const metadata = {
   title: "Recruiter Insights | Faculty of Technology, University of Delhi",
@@ -104,7 +104,7 @@ const tableRows = [
 export default function RecruiterInsightsPage() {
   return (
     <main className="bg-[#f8f6f6] text-slate-900 min-h-screen">
-      <RecruitersNav activePage="insights" />
+      <SiteNav activePage="recruiters" recruitersSubPage="insights" />
 
       <div className="max-w-7xl mx-auto w-full px-6 py-8">
         <nav className="flex items-center gap-2 mb-8 text-sm font-medium">

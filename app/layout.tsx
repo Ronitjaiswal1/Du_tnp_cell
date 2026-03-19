@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { LeadCaptureProvider } from "@/components/providers/lead-capture-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,7 +37,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased overflow-x-hidden`}>
-        {children}
+        <LeadCaptureProvider>{children}</LeadCaptureProvider>
       </body>
     </html>
   );

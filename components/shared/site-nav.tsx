@@ -62,15 +62,19 @@ export function SiteNav({
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-3">
-            <div className="h-12 w-45 overflow-hidden rounded-lg border border-maroon/20 bg-white/90 px-2 py-1 shadow-sm">
+            <div className="h-12 w-12 overflow-hidden rounded-full border border-maroon/25 bg-white shadow-sm">
               <Image
-                src="/fo_logo.png"
-                alt="FoT logo"
-                width={180}
+                src="/du_logo.png"
+                alt="DU logo"
+                width={48}
                 height={48}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover"
                 priority
               />
+            </div>
+            <div className="leading-none">
+              <p className="font-serif text-lg sm:text-2xl font-bold text-[#8f1d1d]">Faculty of Technology</p>
+              <p className="mt-1 text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b06860]">University of Delhi</p>
             </div>
           </Link>
 

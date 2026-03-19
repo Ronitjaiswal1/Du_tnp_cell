@@ -34,98 +34,142 @@ export const secondPageNavLinks: NavLink[] = [
 ];
 
 export const featuredEvent = {
-  title: "Robotics Workshop 2024",
-  details: "Oct 15 - Main Lab 402 - 10:00 AM",
+  title: "102nd Annual Convocation",
+  details: "University Ceremony - February 28, 2026 - University of Delhi",
   image:
-    "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&w=1400&q=80",
+    "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1400&q=80",
 };
 
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    title: "Guest Lecture: AI Ethics",
-    date: "Oct 22",
+    title: "Lecture: Bridging Continents - Croatia and India",
+    date: "Feb 20, 2026",
     details:
-      "Join experts from Microsoft to discuss the future of ethical AI development.",
+      "Delhi University global lecture series session hosted for students and faculty.",
     tag: "Lecture",
+    cta: "View Lecture",
+  },
+  {
+    title: "Job Mela 2026 - Dean Students' Welfare",
+    date: "Mar 3, 2026",
+    details: "Campus placement and recruitment opportunity drive at University of Delhi.",
+    tag: "Placement",
+    cta: "Apply",
+  },
+  {
+    title: "Internal Hackathon - Smart India Hackathon",
+    date: "Sep 2025",
+    details: "Faculty of Technology internal selection round for Smart India Hackathon teams.",
+    tag: "Competition",
+    cta: "Participate",
+  },
+  {
+    title: "DU Literature Festival",
+    date: "Feb 12-14, 2026",
+    details: "Multi-day literary and cultural festival across University of Delhi venues.",
+    tag: "Festival",
+    cta: "Explore",
+  },
+  {
+    title: "FDP: Advanced VLSI Design and Verification",
+    date: "Jan 2026",
+    details: "Faculty Development Programme at FoT using Cadence EDA tools.",
+    tag: "Workshop",
+    cta: "Register",
+  },
+  {
+    title: "Expert Talk: Circular Economy Success Cases",
+    date: "Late 2025",
+    details: "FoT expert talk focusing on sustainability and practical engineering applications.",
+    tag: "Expert Talk",
+    cta: "Know More",
+  },
+  {
+    title: "Orientation Programme - B.Tech Batch 2025",
+    date: "2025",
+    details: "Faculty of Technology onboarding event for first-year B.Tech students.",
+    tag: "Orientation",
+    cta: "View Notice",
+  },
+  {
+    title: "Six-Day Program: AI and ML in Space Exploration",
+    date: "Feb 8, 2026",
+    details: "Online academic program announced by Delhi University and India Space Academy.",
+    tag: "Training",
     cta: "Details",
   },
-  {
-    title: "Dev-Connect Meetup",
-    date: "Oct 25",
-    details: "Cafeteria Terrace",
-    tag: "Community",
-    cta: "Join",
-  },
-  {
-    title: "Annual Hackathon",
-    date: "Nov 05",
-    details: "Innovation Hub",
-    tag: "Competition",
-    cta: "Sign Up",
-  },
-    {
-      title: "Research Symposium",
-      date: "Nov 20",
-      details: "Seminar Hall A",
-      tag: "Research",
-      cta: "Register",
-    },
 ];
 
 export const timelineEvents: TimelineEvent[] = [
   {
-    title: "Industrial Visit: Tech Park",
-    month: "June 2023",
+    title: "DU Literature Festival",
+    month: "February 2026",
     description:
-      "Exploring cloud infrastructure and data centers at the regional HQ.",
+      "A flagship university cultural and literary event conducted over three days for students and scholars.",
     image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1515165562835-c4c9b5f9d6c1?auto=format&fit=crop&w=1400&q=80",
   },
   {
-    title: "Arduino Workshop 2023",
-    month: "March 2023",
+    title: "102nd Annual Convocation",
+    month: "February 2026",
     description:
-      "Hands-on micro-controller programming session for freshman batch.",
+      "University-wide convocation ceremony celebrating academic achievements across disciplines.",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    title: "FoT Internal Smart India Hackathon",
+    month: "September 2025",
+    description:
+      "Department-level hackathon evaluations and mentoring rounds for SIH participation.",
+    image:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    title: "FoT Orientation Programme for B.Tech",
+    month: "August 2025",
+    description:
+      "Orientation sessions introducing curriculum, labs, and student support systems to new entrants.",
+    image:
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=80",
   },
 ];
 
 export const galleryItems: GalleryItem[] = [
   {
-    title: "Innovation Lab",
+    title: "DU Literature Festival",
     image:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1515165562835-c4c9b5f9d6c1?auto=format&fit=crop&w=1200&q=80",
     ratioClass: "aspect-square",
   },
   {
-    title: "Project Presentation",
+    title: "GeeksforGeeks Hackathon Sprint",
     image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
     ratioClass: "aspect-[3/4] md:row-span-2",
   },
   {
-    title: "Inter-College Win",
+    title: "DU Viksit Bharat Run",
     image:
-      "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1543351611-58f69d1c1781?auto=format&fit=crop&w=1200&q=80",
     ratioClass: "aspect-square",
   },
   {
-    title: "Main Hall Lecture",
+    title: "FoT Hack 4 Viksit Bharat Finale",
     image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80",
+      "https://fot.du.ac.in/userfiles/images/slider/hack-4-viksit-bharat-finale-full.png",
     ratioClass: "aspect-video col-span-2 md:col-span-1",
   },
   {
-    title: "VLSI Research",
+    title: "Smart India Hackathon Internal Round",
     image:
-      "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&fit=crop&w=900&q=80",
+      "https://fot.du.ac.in/userfiles/images/slider/SIH_07_09_25_white.png",
     ratioClass: "aspect-square",
   },
   {
-    title: "Coding Sprint",
+    title: "DU Cultural and Campus Event Moments",
     image:
-      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80",
+      "https://www.du.ac.in/uploads/images/23022026_Banner2.jpeg",
     ratioClass: "aspect-square",
   },
 ];

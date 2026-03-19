@@ -1,224 +1,232 @@
 import Image from "next/image";
-import Link from "next/link";
 import { SiteNav } from "@/components/shared/site-nav";
 
 export const metadata = {
-  title: "Students | Faculty of Technology, University of Delhi",
-  description: "Student achievements, clubs, placements, and life at Faculty of Technology, University of Delhi.",
+  title: "Student Excellence | Faculty of Technology",
+  description:
+    "A curated archive of the achievements, research, and technical breakthroughs of the pioneering students at the Faculty of Technology, University of Delhi.",
 };
-
-const achievements = [
-  {
-    title: "Smart India Hackathon 2024 — Winners",
-    dept: "Computer Science",
-    desc: "Team ByteForge from FoT secured 1st place among 5,000+ teams nationwide, building an AI-powered disaster response management system.",
-    badge: "🏆 National Winner",
-    year: "2024",
-  },
-  {
-    title: "IEEE Region 10 Best Paper Award",
-    dept: "Electronics & Communication",
-    desc: "Research on low-power VLSI architectures for edge computing won the Best Paper Award at IEEE TENCON 2024.",
-    badge: "📄 Best Paper",
-    year: "2024",
-  },
-  {
-    title: "Google Summer of Code — 4 Selections",
-    dept: "Computer Science / IT",
-    desc: "Four FoT students earned prestigious GSoC 2024 slots contributing to open-source projects at CERN, Mozilla, and Chromium.",
-    badge: "🌐 GSoC 2024",
-    year: "2024",
-  },
-  {
-    title: "Robocon India — Top 8 Finish",
-    dept: "Electrical Engineering",
-    desc: "Team Robopioneers competed at ABU Robocon 2025, finishing in the top 8 nationally with an autonomous agri-bot.",
-    badge: "🤖 Robocon",
-    year: "2025",
-  },
-  {
-    title: "Microsoft Imagine Cup — Semi-Finalists",
-    dept: "IT",
-    desc: "FoT's HealthBridge project — an accessible telemedicine platform for rural India — reached global semi-finals.",
-    badge: "💡 Imagine Cup",
-    year: "2025",
-  },
-  {
-    title: "ISRO Yuvika Programme — 3 Selections",
-    dept: "Electrical / CS",
-    desc: "Three FoT undergraduate students selected for ISRO's Young Scientist Programme, getting hands-on with satellite tech.",
-    badge: "🚀 ISRO",
-    year: "2025",
-  },
-];
-
-const clubs = [
-  { name: "Enigma — CS Club", desc: "Competitive programming, open-source contributions & hackathon prep.", icon: "💻", members: 180 },
-  { name: "CircuitByte — ECE Club", desc: "PCB design, robotics builds, and national competition teams.", icon: "⚡", members: 120 },
-  { name: "DevHub — IT Club", desc: "Full-stack projects, app development marathons, and startup pitches.", icon: "🌐", members: 210 },
-  { name: "IEEE Student Branch", desc: "Research seminars, paper writing workshops, and industrial visits.", icon: "📡", members: 95 },
-  { name: "E-Cell FoT", desc: "Entrepreneurship events, startup mentoring, and investor connects.", icon: "🚀", members: 150 },
-  { name: "NSS Unit FoT", desc: "Community service, social campaigns, and national integration camps.", icon: "🤝", members: 200 },
-];
-
-const topRecruiters = [
-  "Microsoft", "Google", "Samsung R&D", "Qualcomm", "HCL Technologies",
-  "TCS", "Infosys", "Wipro", "Accenture", "NTPC", "BHEL", "ITC Infotech",
-];
-
-const placements = [
-  { label: "Placement Rate", value: "97%+", icon: "📈" },
-  { label: "Highest Package", value: "₹42 LPA", icon: "💰" },
-  { label: "Average Package", value: "₹8.6 LPA", icon: "📊" },
-  { label: "Companies Visited", value: "80+", icon: "🏢" },
-];
 
 export default function StudentsPage() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-[#FDFBF7] text-slate-900">
+    <div className="bg-surface font-body text-on-surface">
       <SiteNav activePage="students" />
 
-      <main className="max-w-7xl mx-auto px-6 py-12 w-full">
+      <main className="pt-12 pb-20 px-6 max-w-screen-2xl mx-auto">
+        <header className="mb-16 text-center lg:text-left max-w-4xl">
+          <p className="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-4 font-bold">Showcasing Excellence</p>
+          <h1 className="font-headline text-5xl md:text-7xl text-primary-container mb-6 leading-tight">
+            The Next Generation <br />of <span className="italic font-normal">Innovators</span>
+          </h1>
+          <p className="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+            A curated archive of the achievements, research, and technical breakthroughs of the pioneering students at the Faculty of Technology, University of Delhi.
+          </p>
+        </header>
 
-        {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16">
-          <div className="lg:col-span-8 rounded-xl bg-white border border-maroon/10 p-10 flex flex-col justify-center relative overflow-hidden shadow-sm">
-            <div className="absolute top-0 right-0 p-10 opacity-5 select-none">
-              <span className="text-[10rem] leading-none">🎓</span>
-            </div>
-            <p className="text-xs font-black uppercase tracking-widest text-gold mb-3">Student Life & Achievements</p>
-            <h1 className="font-serif text-5xl md:text-6xl font-black leading-tight text-maroon mb-6">
-              Our Pioneers<br /><span className="text-gold">Make History</span>
-            </h1>
-            <p className="max-w-xl text-lg text-slate-600 leading-relaxed mb-8">
-              From national hackathon victories to global research publications — FoT students
-              consistently lead in innovation, entrepreneurship, and social impact.
-            </p>
-            <div className="flex gap-4 flex-wrap">
-              <a href="#achievements" className="inline-flex items-center gap-2 bg-maroon text-white px-8 py-3 rounded-lg font-bold hover:bg-black transition-all">
-                View Achievements <span>→</span>
-              </a>
-              <Link href="/events" className="inline-flex items-center gap-2 border-2 border-maroon text-maroon px-8 py-3 rounded-lg font-bold hover:bg-maroon hover:text-white transition-all">
-                Upcoming Events
-              </Link>
-            </div>
-          </div>
-          <div className="lg:col-span-4 rounded-xl overflow-hidden h-72 lg:h-auto relative border border-maroon/10 shadow-sm">
-            <Image src="/FOT.png" alt="FoT Campus" fill className="object-cover" />
-            <div className="absolute inset-0 bg-linear-to-t from-maroon/60 to-transparent" />
-            <div className="absolute bottom-0 left-0 p-6 text-white">
-              <p className="text-xs font-bold uppercase tracking-widest text-gold mb-1">Batch of 2025</p>
-              <p className="font-serif text-xl font-bold">125+ Placed</p>
-            </div>
-          </div>
+        <div className="mb-12 flex flex-wrap gap-3 items-center">
+          <button className="bg-primary-container text-on-primary px-6 py-2 rounded-full text-sm font-medium transition-all">All Achievements</button>
+          <button className="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-container-high transition-all">Technical Wins</button>
+          <button className="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-container-high transition-all">Research Papers</button>
+          <button className="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-container-high transition-all">Entrepreneurship</button>
         </div>
 
-        {/* Placement Stats */}
-        <section className="mb-16">
-          <div className="rounded-xl bg-maroon text-white p-8">
-            <h2 className="font-serif text-2xl font-bold mb-8 text-center text-gold uppercase tracking-widest">Placement Highlights 2024–25</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {placements.map((p) => (
-                <div key={p.label}>
-                  <p className="text-3xl mb-1">{p.icon}</p>
-                  <p className="text-4xl font-black text-gold">{p.value}</p>
-                  <p className="text-xs uppercase tracking-widest font-bold mt-2 opacity-80">{p.label}</p>
-                </div>
-              ))}
+        <div className="bento-grid">
+          <article className="span-2 bg-surface-container-lowest rounded-xl p-8 ghost-shadow card-hover transition-all duration-500 border border-outline-variant/10 flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+              <span className="inline-block bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider mb-6">[ Hackathon Winner ]</span>
+              <h3 className="font-headline text-3xl text-primary-container mb-4">1st Prize: SIH 2024 - Smart Policing Systems</h3>
+              <p className="text-on-surface-variant text-sm mb-8 leading-relaxed">
+                Developed a real-time predictive analytics dashboard for emergency response optimization, reducing dispatch time by 40% using graph neural networks.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                <span className="bg-surface-container-low px-3 py-1 rounded-lg text-[10px] font-semibold text-on-surface-variant">#TensorFlow</span>
+                <span className="bg-surface-container-low px-3 py-1 rounded-lg text-[10px] font-semibold text-on-surface-variant">#Python</span>
+                <span className="bg-surface-container-low px-3 py-1 rounded-lg text-[10px] font-semibold text-on-surface-variant">#GNN</span>
+              </div>
+              <div className="flex gap-4">
+                <span className="material-symbols-outlined text-primary-container cursor-pointer text-xl" data-icon="terminal">
+                  terminal
+                </span>
+                <span className="material-symbols-outlined text-primary-container cursor-pointer text-xl" data-icon="work">
+                  work
+                </span>
+              </div>
             </div>
-          </div>
-        </section>
-
-        {/* Achievements Section */}
-        <section id="achievements" className="mb-16">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="h-1 w-10 bg-gold rounded-full" />
-            <h2 className="font-serif text-4xl font-bold text-maroon">Student Achievements</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {achievements.map((a) => (
-              <div key={a.title} className="bg-white rounded-xl border border-maroon/10 p-8 hover:shadow-xl transition-all group flex flex-col">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-black uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">
-                    {a.year}
-                  </span>
-                  <span className="text-sm font-bold text-maroon">{a.badge}</span>
-                </div>
-                <h3 className="font-serif text-lg font-bold text-maroon mb-2 group-hover:text-gold transition-colors">{a.title}</h3>
-                <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-3">{a.dept}</p>
-                <p className="text-sm text-slate-600 leading-relaxed">{a.desc}</p>
+            <div className="md:w-64 flex flex-col items-center md:items-start justify-center border-l border-outline-variant/10 md:pl-8">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="Arjun Sharma"
+                className="w-24 h-24 rounded-full object-cover mb-4 grayscale hover:grayscale-0 transition-all border-4 border-surface"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhSOSX_oUC5Z8Be1MkkHnOni1fuoJR6dnpzboijvOPRyHdBqh3GN1OsWIBUiBWYMBQEQZKt1cnXnZsnQDknW7eQP5G2Lek-8c6srnSRyGIOylbAd5U3gWFlAqnpCAv4fwdo1PsRrAk1RzqrnIFdkpKlZaFQvBRKX4LnYagESpTn2-peInySw0k6brBpLgZHcVZhlMjcOP9R2FvlhzE5PpvGBCNEC6cqgvoCvQ3g1a_bP4gn1PGmIzIVa1BRigEVvBBhf23ngpCxA"
+              />
+              <div className="text-center md:text-left">
+                <h4 className="font-bold text-on-surface">Arjun Sharma</h4>
+                <p className="text-xs text-on-surface-variant uppercase tracking-widest font-medium">CSE | Class of 2025</p>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+          </article>
 
-        {/* Student Clubs */}
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="h-1 w-10 bg-gold rounded-full" />
-            <h2 className="font-serif text-4xl font-bold text-maroon">Student Clubs & Societies</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {clubs.map((c) => (
-              <div key={c.name} className="bg-white rounded-xl border border-maroon/10 p-6 hover:shadow-lg transition-all flex gap-5 items-start">
-                <span className="text-3xl">{c.icon}</span>
-                <div>
-                  <h3 className="font-bold text-maroon mb-1">{c.name}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.desc}</p>
-                  <p className="text-xs font-black uppercase tracking-widest text-gold">{c.members} Members</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Top Recruiters */}
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-1 w-10 bg-gold rounded-full" />
-            <h2 className="font-serif text-4xl font-bold text-maroon">Top Recruiters</h2>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {topRecruiters.map((r) => (
-              <span key={r} className="px-4 py-2 bg-white border border-maroon/20 rounded-full text-sm font-semibold text-maroon hover:bg-maroon hover:text-white transition-all cursor-default">
-                {r}
+          <article className="bg-surface-container-lowest rounded-xl p-8 ghost-shadow card-hover transition-all duration-500 border border-outline-variant/10 flex flex-col">
+            <div className="flex justify-between items-start mb-6">
+              <span className="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">[ Research Published ]</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="Priya Verma"
+                className="w-16 h-16 rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEpkLwIT6vtAbrzGurZPNoNdfbps6hX2JYBOJm6X1AH-eJfGznHxrDLOuziC5MIxbw3duwCyEIAFmG7lawBEqi4eZWW72Yigm1OkE7O0HcMhtlzge-hvZ8zUSd2kMzys8WWW-l_g50X-eYJAA9mLXtFxqYUN2gk4j9cYgvyg0nbXBUnS7ZRNVlu8AjFPW9ooIS0uBFBI2kw4viN7Uo1m9Jc6XdpNFRxlSpKjb6CBGEClxSanq3QfVVe3qpBTsrrYTUtQJgVN-YNw"
+              />
+            </div>
+            <div className="mb-2">
+              <h4 className="font-bold text-on-surface text-sm">Priya Verma</h4>
+              <p className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-4">ECE | Junior</p>
+            </div>
+            <h3 className="font-headline text-2xl text-primary-container mb-3 leading-snug">Quantum Cryptography Protocols</h3>
+            <p className="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+              Published in IEEE Explorer: A novel approach to securing IoT nodes using lightweight quantum-resistant algorithms.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="bg-surface-container-low px-2 py-1 rounded text-[10px] font-semibold text-on-surface-variant">#Quantum</span>
+              <span className="bg-surface-container-low px-2 py-1 rounded text-[10px] font-semibold text-on-surface-variant">#IEEE</span>
+            </div>
+            <div className="flex gap-3 pt-4 border-t border-outline-variant/10">
+              <span className="material-symbols-outlined text-primary-container/60 hover:text-primary-container cursor-pointer transition-colors" data-icon="article">
+                article
               </span>
-            ))}
-          </div>
-        </section>
+              <span className="material-symbols-outlined text-primary-container/60 hover:text-primary-container cursor-pointer transition-colors" data-icon="link">
+                link
+              </span>
+            </div>
+          </article>
+
+          <article className="bg-surface-container-lowest rounded-xl p-8 ghost-shadow card-hover transition-all duration-500 border border-outline-variant/10 flex flex-col">
+            <div className="flex justify-between items-start mb-6">
+              <span className="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">[ Entrepreneurship ]</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="Rahul Nair"
+                className="w-16 h-16 rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa8YbBvv5AAzPgfCOAZ84hg3XVvazSzwm82Sqm9pMiHK6O8fZkHTxni76lkP4sgehV1ZwUAy5qx3ZbWN1HLRS2FFbzlg_TK0_wn_urPCIL_A3VzJ_qHtLg8jZQAgQ0UbfDaPVAkZUFvdxsBXULT92st39VgzdAAdoy5ztNRk6tdayWbvtq56lAoItLYJj_mM73w3e20TQm2xp5RlUcQLC45jpxk6oYX43v21or8s2-Iw9qzQX45uM9YSHoBSvQyGQT3qu16B_Krw"
+              />
+            </div>
+            <div className="mb-2">
+              <h4 className="font-bold text-on-surface text-sm">Rahul Nair</h4>
+              <p className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-4">EE | Final Year</p>
+            </div>
+            <h3 className="font-headline text-2xl text-primary-container mb-3 leading-snug">Founding EcoCharge Hub</h3>
+            <p className="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+              Secured $10k seed funding for an AI-powered EV charging grid optimizer reducing energy waste by 15%.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="bg-surface-container-low px-2 py-1 rounded text-[10px] font-semibold text-on-surface-variant">#CleanTech</span>
+              <span className="bg-surface-container-low px-2 py-1 rounded text-[10px] font-semibold text-on-surface-variant">#Sustainability</span>
+            </div>
+            <div className="flex gap-3 pt-4 border-t border-outline-variant/10">
+              <span className="material-symbols-outlined text-primary-container/60 hover:text-primary-container cursor-pointer transition-colors" data-icon="language">
+                language
+              </span>
+              <span className="material-symbols-outlined text-primary-container/60 hover:text-primary-container cursor-pointer transition-colors" data-icon="trending_up">
+                trending_up
+              </span>
+            </div>
+          </article>
+
+          <article className="span-2 bg-surface-container-lowest rounded-xl p-8 ghost-shadow card-hover transition-all duration-500 border border-outline-variant/10 flex flex-col md:flex-row-reverse gap-8">
+            <div className="flex-1">
+              <span className="inline-block bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider mb-6">[ Robotics Excellence ]</span>
+              <h3 className="font-headline text-3xl text-primary-container mb-4">Global Finalists: RoboCup 2024</h3>
+              <p className="text-on-surface-variant text-sm mb-8 leading-relaxed">
+                Led the hardware design for an autonomous search-and-rescue drone fleet utilizing swarm intelligence for terrain mapping in zero-visibility conditions.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                <span className="bg-surface-container-low px-3 py-1 rounded-lg text-[10px] font-semibold text-on-surface-variant">#ROS2</span>
+                <span className="bg-surface-container-low px-3 py-1 rounded-lg text-[10px] font-semibold text-on-surface-variant">#C++</span>
+                <span className="bg-surface-container-low px-3 py-1 rounded-lg text-[10px] font-semibold text-on-surface-variant">#Lidar</span>
+              </div>
+              <div className="flex gap-4">
+                <span className="material-symbols-outlined text-primary-container cursor-pointer text-xl" data-icon="precision_manufacturing">
+                  precision_manufacturing
+                </span>
+                <span className="material-symbols-outlined text-primary-container cursor-pointer text-xl" data-icon="videocam">
+                  videocam
+                </span>
+              </div>
+            </div>
+            <div className="md:w-64 flex flex-col items-center md:items-end justify-center border-r border-outline-variant/10 md:pr-8">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="Meera Gupta"
+                className="w-24 h-24 rounded-full object-cover mb-4 grayscale hover:grayscale-0 transition-all border-4 border-surface"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhiJz38PfztwLk_FUzvQ06RrVXqltDcpjM3gRzvcfK-T2cwh6gybWoTgY0siF9ejw06H87zEUklHtha0m6h0u4gDDTCOKXJBkgWOwwj23KI9xSii0FzlLFaXTo1jDnv6bbEY4bbGcRbtSeDNaNaMqWr6ZPP_Ss14w7TuTNh-XJKoPrZplm4xyYKlp9qTE4uALsCfQ6cmgB_6fDEnUHI8G1OJRExOU6wHeiZz_dgbqprIwqoR_83nuQyVyQIShpLjjDU5gmInXd1Q"
+              />
+              <div className="text-center md:text-right">
+                <h4 className="font-bold text-on-surface">Meera Gupta</h4>
+                <p className="text-xs text-on-surface-variant uppercase tracking-widest font-medium">CSE | Class of 2026</p>
+              </div>
+            </div>
+          </article>
+
+          <article className="bg-surface-container-lowest rounded-xl p-8 ghost-shadow card-hover transition-all duration-500 border border-outline-variant/10 flex flex-col">
+            <div className="flex justify-between items-start mb-6">
+              <span className="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">[ Patent Pending ]</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="Siddharth Jain"
+                className="w-16 h-16 rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO6DUzhGAYuXGsG2m35qO18SduogbDY_E3_zQE4jzvNIGQsbAsGH05aJb37EtCbDeTqOBsmka4CA-xuEpclPnbMm96H7vXhZSo-jZ-7zilWlr2lr4lBhGQYGhFsZ2PWc2DlcRivfpxI9aoZ0Exx4_ZUcJIgFnWj4ZQ7u3uL6_uSS8AMcEjgOwSKj9ydHSnGGKvlzWR7oMDJ7K9whOWCp1aqSHv54yU3WXyMay-OChxZ_T5hI1Rv_Kh71WH5pj4ExxTZpCQbz9nrw"
+              />
+            </div>
+            <div className="mb-2">
+              <h4 className="font-bold text-on-surface text-sm">Siddharth Jain</h4>
+              <p className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-4">ME | Senior</p>
+            </div>
+            <h3 className="font-headline text-2xl text-primary-container mb-3 leading-snug">Regenerative Braking for Micromobility</h3>
+            <p className="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+              Invented a low-cost retrofit kit for standard bicycles that stores braking energy to power LED safety lighting.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="bg-surface-container-low px-2 py-1 rounded text-[10px] font-semibold text-on-surface-variant">#Hardware</span>
+              <span className="bg-surface-container-low px-2 py-1 rounded text-[10px] font-semibold text-on-surface-variant">#CAD</span>
+            </div>
+            <div className="flex gap-3 pt-4 border-t border-outline-variant/10">
+              <span className="material-symbols-outlined text-primary-container/60 hover:text-primary-container cursor-pointer transition-colors" data-icon="verified">
+                verified
+              </span>
+              <span className="material-symbols-outlined text-primary-container/60 hover:text-primary-container cursor-pointer transition-colors" data-icon="description">
+                description
+              </span>
+            </div>
+          </article>
+        </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-maroon/5 border-t border-maroon/10 py-12 px-6 mt-auto">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="col-span-1 md:col-span-2">
-            <div className="h-14 w-45 overflow-hidden rounded-lg border border-maroon/20 bg-white px-2 py-1 mb-4">
-              <Image src="/fo_logo.png" alt="FoT logo" width={180} height={56} className="h-full w-full object-contain" />
+      <footer className="w-full mt-20 border-t border-slate-200 bg-slate-50 dark:bg-slate-950">
+        <div className="flex flex-col md:flex-row justify-between items-center px-12 py-12 gap-6 max-w-screen-2xl mx-auto">
+          <div className="flex items-center gap-4">
+            <div className="h-12 w-12 overflow-hidden rounded-full border border-maroon/20 bg-white shadow-sm">
+              <Image src="/du_logo.png" alt="DU logo" width={48} height={48} className="h-full w-full object-cover" />
             </div>
-            <p className="text-slate-500 text-sm leading-relaxed max-w-sm">
-              Empowering students to innovate, lead, and make a difference since 1952.
-            </p>
+            <div className="leading-none">
+              <p className="font-serif text-lg sm:text-2xl font-bold text-[#8f1d1d]">Faculty of Technology</p>
+              <p className="mt-1 text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-[#b06860]">University of Delhi</p>
+            </div>
           </div>
-          <div>
-            <h4 className="font-bold text-maroon mb-4 text-sm uppercase tracking-widest">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-slate-600">
-              <li><Link href="/" className="hover:text-maroon transition-colors">Home</Link></li>
-              <li><Link href="/academics" className="hover:text-maroon transition-colors">Academics</Link></li>
-              <li><Link href="/students" className="hover:text-maroon transition-colors">Students</Link></li>
-              <li><Link href="/events" className="hover:text-maroon transition-colors">Events</Link></li>
-            </ul>
+          <p className="font-sans text-[10px] uppercase tracking-widest text-slate-500 text-center md:text-left">
+            © 2024 University of Delhi - Faculty of Technology. Excellence in Engineering.
+          </p>
+          <div className="flex gap-8">
+            <a className="font-sans text-[10px] uppercase tracking-widest text-slate-500 hover:text-primary transition-all" href="#">
+              Privacy Policy
+            </a>
+            <a className="font-sans text-[10px] uppercase tracking-widest text-slate-500 hover:text-primary transition-all" href="#">
+              Terms of Service
+            </a>
+            <a className="font-sans text-[10px] uppercase tracking-widest text-slate-500 hover:text-primary transition-all" href="#">
+              University Portal
+            </a>
+            <a className="font-sans text-[10px] uppercase tracking-widest text-slate-500 hover:text-primary transition-all" href="#">
+              Contact Us
+            </a>
           </div>
-          <div>
-            <h4 className="font-bold text-maroon mb-4 text-sm uppercase tracking-widest">Contact</h4>
-            <ul className="space-y-2 text-sm text-slate-600">
-              <li>tnp.fot@du.ac.in</li>
-              <li>+91 11 2766 7000</li>
-              <li>University Enclave, North Campus, Delhi 110007</li>
-            </ul>
-          </div>
-        </div>
-        <div className="mx-auto max-w-7xl mt-10 pt-6 border-t border-maroon/10 text-center text-xs text-slate-400 font-bold uppercase tracking-widest">
-          © 2026 Faculty of Technology, University of Delhi. All rights reserved.
         </div>
       </footer>
     </div>
