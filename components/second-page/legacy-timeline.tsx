@@ -38,7 +38,16 @@ export function LegacyTimeline() {
                     <div className="overflow-hidden rounded-2xl border-2 border-white shadow-lg">
                       <img alt={event.title} className="h-56 w-full object-cover" src={event.image} />
                     </div>
-                    <span className="mt-2 block text-xs font-bold uppercase tracking-wider text-gold">{event.month}</span>
+                    <div className="relative mt-3 inline-block group/date">
+                      <span className="inline-flex origin-left rounded-full border border-gold/60 bg-maroon px-3 py-1 text-xs font-black uppercase tracking-wider text-gold transition-transform duration-300 ease-out group-hover/date:scale-110 group-focus-within/date:scale-110">
+                        {event.month}
+                      </span>
+                      <div className="pointer-events-none absolute left-0 top-full z-20 mt-3 w-72 max-w-[85vw] rounded-xl border border-maroon/20 bg-white p-4 opacity-0 shadow-xl transition-all duration-300 ease-out group-hover/date:translate-y-0 group-hover/date:opacity-100 group-focus-within/date:translate-y-0 group-focus-within/date:opacity-100 -translate-y-2">
+                        <p className="text-[10px] font-black uppercase tracking-[0.18em] text-gold">Milestone</p>
+                        <h5 className="mt-1 font-serif text-lg font-bold text-maroon">{event.title}</h5>
+                        <p className="mt-2 text-xs leading-relaxed text-slate-600">{event.description}</p>
+                      </div>
+                    </div>
                   </div>
                 </article>
               );

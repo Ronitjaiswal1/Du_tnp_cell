@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SiteNav } from "@/components/shared/site-nav";
 
 export const metadata = {
   title: "Students | Faculty of Technology, University of Delhi",
@@ -75,30 +76,7 @@ const placements = [
 export default function StudentsPage() {
   return (
     <div className="relative flex min-h-screen flex-col bg-[#FDFBF7] text-slate-900">
-      {/* Nav */}
-      <header className="sticky top-0 z-50 w-full border-b border-maroon/10 bg-[#FDFBF7]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center">
-              <div className="h-12 w-45 overflow-hidden rounded-lg border border-maroon/20 bg-white/90 px-2 py-1 shadow-sm">
-                <Image src="/fo_logo.png" alt="FoT logo" width={180} height={48} className="h-full w-full object-contain" priority />
-              </div>
-            </Link>
-            <nav className="hidden md:flex items-center gap-6">
-              <Link href="/" className="text-sm font-semibold text-slate-600 hover:text-maroon transition-colors">Home</Link>
-              <Link href="/academics" className="text-sm font-semibold text-slate-600 hover:text-maroon transition-colors">Academics</Link>
-              <Link href="/students" className="text-sm font-bold text-maroon border-b-2 border-maroon pb-0.5">Students</Link>
-              <Link href="/events" className="text-sm font-semibold text-slate-600 hover:text-maroon transition-colors">Events</Link>
-            </nav>
-          </div>
-          <div className="hidden sm:flex items-center bg-maroon/5 border border-maroon/20 rounded-full px-4 py-2 gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-maroon/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
-            </svg>
-            <input className="bg-transparent border-none outline-none text-sm text-maroon placeholder:text-maroon/40 w-36" placeholder="Search..." type="text" />
-          </div>
-        </div>
-      </header>
+      <SiteNav activePage="students" />
 
       <main className="max-w-7xl mx-auto px-6 py-12 w-full">
 
