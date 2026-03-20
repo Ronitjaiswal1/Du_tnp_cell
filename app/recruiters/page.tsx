@@ -1,6 +1,6 @@
-import { RecruitersNav } from "@/components/recruiters/recruiters-nav";
 import { RecruiterContactCard } from "../../components/recruiters/recruiter-contact-card";
 import { SiteFooter } from "@/components/sections/site-footer";
+import { SiteNav } from "@/components/shared/site-nav";
 
 export const metadata = {
   title: "Recruiters | Faculty of Technology, University of Delhi",
@@ -10,7 +10,7 @@ export const metadata = {
 export default function RecruitersPage() {
   return (
     <main className="bg-antique-white">
-      <RecruitersNav activePage="contact" />
+      <SiteNav activePage="recruiters" recruitersSubPage="contact" />
       
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center pt-20 px-6 bg-gradient-to-b from-maroon/5 to-antique-white">

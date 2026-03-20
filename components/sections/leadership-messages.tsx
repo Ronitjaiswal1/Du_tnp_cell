@@ -14,18 +14,20 @@ export function LeadershipMessages() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <article className="group rounded-2xl border border-maroon/20 bg-white p-8 shadow-sm transition-all duration-300 hover:bg-maroon hover:text-antique-white hover:shadow-lg">
             <div className="mb-6 flex items-center gap-4">
-              <div className="h-20 w-20 shrink-0 rounded-xl border-2 border-dashed border-maroon/40 bg-maroon/5 flex items-center justify-center text-[10px] font-bold uppercase tracking-[0.16em] text-maroon text-center px-2 transition-colors group-hover:border-antique-white/70 group-hover:bg-antique-white/10 group-hover:text-antique-white">
-                Add VC Image
+              <div className="h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-maroon/25 bg-maroon/5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://www.du.ac.in/uploads/new-web/13092024_VC-ProfYogeshSingh-1.jpg"
+                  alt="Prof. Yogesh Singh, Vice Chancellor"
+                  className="h-full w-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+                />
               </div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 transition-colors group-hover:text-antique-white/80">
-                Reserved space for Vice Chancellor photo
-              </p>
             </div>
             <div className="mb-6 flex items-center justify-between">
               <span className="rounded-full bg-maroon/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-maroon transition-colors group-hover:bg-antique-white/15 group-hover:text-antique-white">
                 Vice Chancellor
               </span>
-              <span className="text-5xl leading-none text-gold/60">“</span>
+              <span className="text-5xl leading-none text-gold/60">&quot;</span>
             </div>
             <p className="text-base leading-relaxed text-slate-700 transition-colors group-hover:text-antique-white/90">
               At the University of Delhi, we are committed to nurturing professionals who combine technical depth with social
@@ -40,18 +42,20 @@ export function LeadershipMessages() {
 
           <article className="group rounded-2xl border border-maroon/20 bg-white p-8 shadow-sm transition-all duration-300 hover:bg-maroon hover:text-antique-white hover:shadow-lg">
             <div className="mb-6 flex items-center gap-4">
-              <div className="h-20 w-20 shrink-0 rounded-xl border-2 border-dashed border-maroon/40 bg-maroon/5 flex items-center justify-center text-[10px] font-bold uppercase tracking-[0.16em] text-maroon text-center px-2 transition-colors group-hover:border-antique-white/70 group-hover:bg-antique-white/10 group-hover:text-antique-white">
-                Add Dean Image
+              <div className="h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-maroon/25 bg-maroon/5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://www.du.ac.in/uploads/du/Faculty%20Images/sanjeev.jpg"
+                  alt="Prof. Sanjeev Singh, Dean"
+                  className="h-full w-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+                />
               </div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 transition-colors group-hover:text-antique-white/80">
-                Reserved space for Dean photo
-              </p>
             </div>
             <div className="mb-6 flex items-center justify-between">
               <span className="rounded-full bg-maroon/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-maroon transition-colors group-hover:bg-antique-white/15 group-hover:text-antique-white">
                 Dean
               </span>
-              <span className="text-5xl leading-none text-gold/60">“</span>
+              <span className="text-5xl leading-none text-gold/60">&quot;</span>
             </div>
             <p className="text-base leading-relaxed text-slate-700 transition-colors group-hover:text-antique-white/90">
               Our mission at the Faculty of Technology is to create an ecosystem where learning, research, and industry

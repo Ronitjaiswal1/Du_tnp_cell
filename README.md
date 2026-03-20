@@ -1,112 +1,85 @@
 # DU FoT TnP Website
 
-Training and Placement website for Faculty of Technology, University of Delhi.
+Secure, scalable placement and event showcase platform built on Next.js App Router.
 
-This project uses Next.js App Router with API routes for recruiter leads, recruiter contact requests, events, and placement counters.
+## Architecture
 
-## Current Integration Status
+This project follows a three-tier decoupled model.
 
-The frontend and backend are connected for these flows:
+1. Presentation Layer: Next.js app pages/components (`app`, `components`)
+2. Application Layer: Serverless API routes (`app/api`)
+3. Data Layer: MongoDB Atlas (via `lib/mongodb.ts`)
 
-1. Recruiter CTA modal submits to POST /api/leads
-2. Lead handover redirects via GET /api/leads/handover
-3. Recruiter company contact form submits to POST /api/recruiter-contact
-4. Events section reads from GET /api/events with static fallback
-5. Recruiter stats section reads from GET /api/counters with static fallback
+The decoupled setup allows future batches to update UI safely without breaking lead capture and backend persistence.
 
 ## Tech Stack
 
-1. Next.js 16 (App Router)
-2. React 19
-3. Tailwind CSS 4
-4. Framer Motion + Three.js stack for visual sections
-5. MongoDB Node.js Driver
-6. Zod for API input validation
+1. Framework: Next.js (App Router)
+2. Styling: Tailwind CSS
+3. Animations: Framer Motion
+4. Backend Validation: Zod
+5. Database: MongoDB Atlas (`mongodb` driver)
+6. Deployment: Vercel + GitHub
 
-## Project Structure
+## Secure Lead Handover Flow
 
-1. app: route segments and API handlers
-2. components: UI modules grouped by feature
-3. lib: environment config, MongoDB helpers, validators, static fallback data
-4. public: static assets including placement brochure and logos
+1. Recruiter clicks CTA (brochure/event/register actions)
+2. Lead modal captures name, company, work email
+3. Backend validates input with Zod and checks honeypot field
+4. Rate limiting is applied by IP
+5. Valid lead is stored in MongoDB
+6. Backend handover endpoint issues HTTP 302 to official DU portal (`https://slc.uod.ac.in/`)
 
-## API Endpoints
+## API Routes
 
-1. POST /api/leads
-Purpose:
-Validates lead capture form input, enforces rate limiting, stores lead, and returns controlled handover URL.
+All routes include inline maintenance comments for Batch 2027+.
 
-2. GET /api/leads/handover
-Purpose:
-Validates lead handover request and redirects to official portal.
+1. `POST /api/leads`
+	1. Validates and stores recruiter leads
+	2. Returns handover URL
+2. `GET /api/leads/handover`
+	1. Backend-controlled 302 redirect to DU portal
+3. `GET /api/events`
+	1. Reads dynamic events from MongoDB
+	2. Falls back to static events data if DB is unavailable
+4. `GET /api/counters`
+	1. Reads dynamic placement counters from MongoDB
+	2. Falls back to static counters if DB is unavailable
 
-3. GET /api/leads?h=<leadId>
-Purpose:
-Minimal existence check utility for lead records.
+## Environment Setup
 
-4. POST /api/recruiter-contact
-Purpose:
-Validates recruiter contact form input, enforces rate limiting, and stores request for admin follow-up.
+1. Copy `.env.example` to `.env.local`
+2. Fill values for `MONGODB_URI` and optional overrides
 
-5. GET /api/events
-Purpose:
-Returns events from MongoDB; if unavailable, returns static fallback data.
+Required variables:
 
-6. GET /api/counters
-Purpose:
-Returns placement counters from MongoDB; if unavailable, returns static fallback values.
+1. `MONGODB_URI`
+2. `MONGODB_DB_NAME` (optional, default `tnp_website`)
+3. `SAMARTH_REDIRECT_URL` (default `https://slc.uod.ac.in/`)
+4. `BROCHURE_PUBLIC_PATH` (default `/Placement_Fot_2026.pdf`)
+5. `LEADS_RATE_LIMIT_WINDOW_MS`
+6. `LEADS_RATE_LIMIT_MAX_REQUESTS`
 
-## Environment Variables
-
-Create a file named .env.local in project root and add the following values.
-
-Required for database-backed behavior:
-
-1. MONGODB_URI
-
-Optional with defaults:
-
-1. MONGODB_DB_NAME=tnp_website
-2. SAMARTH_REDIRECT_URL=https://slc.uod.ac.in/
-3. BROCHURE_PUBLIC_PATH=/Placement_Fot_2026.pdf
-4. LEADS_RATE_LIMIT_WINDOW_MS=60000
-5. LEADS_RATE_LIMIT_MAX_REQUESTS=15
-
-## Local Setup
-
-1. Install dependencies:
+## Local Development
 
 ```bash
 npm install
-```
-
-2. Run development server:
-
-```bash
 npm run dev
 ```
 
-3. Open:
+Open `http://localhost:3000`.
 
-http://localhost:3000
+## Asset Notes
 
-## Build and Production
+1. Brochure asset path: `public/Placement_Fot_2026.pdf`
+2. Prefer `.webp` assets for new image additions
+3. Keep file names stable to avoid breaking existing references
 
-```bash
-npm run build
-npm run start
-```
+## Maintenance Protocol (Batch 2027+)
 
-## Validation and Safety Notes
-
-1. Input validation is centralized in lib/validators.ts
-2. Rate limiting is applied in critical write routes
-3. API handlers gracefully fall back where applicable
-4. Do not commit .env.local or secret connection strings
-
-## Maintainer Notes
-
-1. When form fields change, update Zod schemas first and keep response shape stable for frontend consumers.
-2. If MongoDB is unavailable, reads from events and counters continue using fallback content.
-3. Keep branding text for header and footer consistent: Faculty of Technology.
+1. Update schemas first in `lib/validators.ts` before changing form fields
+2. Preserve honeypot field behavior (`website` must stay empty)
+3. Keep API response shapes stable for modal/CTA integrations
+4. Update static fallbacks in `lib/site-data.ts` and `lib/second-page-data.ts` when academic cycle changes
+5. Never commit `.env.local` or production secrets
 

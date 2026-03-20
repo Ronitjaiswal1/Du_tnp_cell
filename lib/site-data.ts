@@ -7,9 +7,9 @@ export const achievements = [
 
 export const credibility = [
   {
-    title: "NAAC Accreditation",
-    value: "A++",
-    detail: "Institutional quality benchmark with strong academic governance and outcomes.",
+    title: "QS World Ranking",
+    value: "328",
+    detail: "University of Delhi is placed at QS World University Rankings position 328.",
   },
   {
     title: "NIRF Standing",
@@ -54,6 +54,29 @@ export const whyHireUs = [
 ];
 
 export const links = {
-  samarth: "https://samarth.edu.in/",
-  brochure: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+  samarth: "https://slc.uod.ac.in/",
+  brochure: "/Placement_Fot_2026.pdf",
 };
+
+export const heroBackgroundSlides = [
+  {
+    src: "/FOT.png",
+    alt: "Faculty of Technology building",
+  },
+  {
+    src: "https://www.du.ac.in/uploads/new-web/13092024_VC-ProfYogeshSingh-1.jpg",
+    alt: "Vice Chancellor office at the University of Delhi",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=80",
+    alt: "Students walking through a campus lane",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=80",
+    alt: "Modern university architecture",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=80",
+    alt: "Students collaborating on engineering work",
+  },
+];

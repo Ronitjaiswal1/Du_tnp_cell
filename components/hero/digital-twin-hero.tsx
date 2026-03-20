@@ -6,6 +6,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
 import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { Box3, Color, Group, Mesh, MeshPhysicalMaterial, MeshStandardMaterial, Vector3 } from "three";
+import { HeroBackgroundSlider } from "./hero-background-slider";
+import { heroBackgroundSlides } from "@/lib/site-data";
 
 type ModelErrorBoundaryProps = {
   onError: () => void;
@@ -237,10 +239,15 @@ export function DigitalTwinHero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="hero">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#FDFDFD,white,#f3f4f6)]" />
+      <HeroBackgroundSlider slides={heroBackgroundSlides} />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(253,253,253,0.35),rgba(255,255,255,0.62),rgba(243,244,246,0.88))]" />
+      <div className="absolute inset-0 bg-linear-to-b from-white/25 via-white/50 to-[#f3f4f6]/70" />
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 space-y-6 text-center md:text-left">
+          <h2 className="font-serif text-3xl md:text-5xl text-maroon leading-tight">
+            Training and Placement Cell
+          </h2>
           <h1 className="font-serif text-6xl md:text-8xl text-maroon leading-tight">
             Architecting <br />
             <span className="text-gold italic">the Future.</span>
@@ -255,7 +262,10 @@ export function DigitalTwinHero() {
             >
               Explore Programs
             </a>
-            <a className="px-8 py-4 bg-maroon text-white rounded-lg font-bold shadow-xl hover:bg-black transition-all text-center" href="#legacy">
+            <a
+              className="px-8 py-4 bg-maroon text-white rounded-lg font-bold shadow-xl hover:bg-black transition-all text-center"
+              href="/academics/facilities#facilities-section"
+            >
               Virtual Tour
             </a>
           </div>

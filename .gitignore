@@ -42,3 +42,11 @@ next-env.d.ts
 
 Meshy_AI_Tech_Circuit_Campus_0315231537_generate.glb
 dev-server.log
+
+# legacy/static reference artifacts not intended for publication
+/references/
+/old_version/
+/Du_tnp_cell-master/
+/homepage.html
+/secondpage.html
+/student_page.html
