@@ -7,8 +7,13 @@ export function EventsFooter() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="mb-6 flex items-center gap-3">
-              <div className="h-16 w-62.5 overflow-hidden rounded-lg border border-maroon/20 bg-white px-2 py-1 shadow-sm">
-                <Image src="/fo_logo.png" alt="FoT complete logo" width={250} height={64} className="h-full w-full object-contain" />
+              <div className="inline-flex items-center gap-2 rounded-lg border border-maroon/20 bg-white px-2 py-2 shadow-sm">
+                <div className="h-14 w-11 overflow-hidden rounded-md bg-white">
+                  <Image src="/Du_logo.png" alt="Delhi University logo" width={72} height={84} className="h-full w-full object-contain" unoptimized />
+                </div>
+                <div className="h-14 w-20 overflow-hidden rounded-md bg-white">
+                  <Image src="/fot_logo_new.png" alt="Faculty of Technology logo" width={120} height={84} className="h-full w-full object-contain" unoptimized />
+                </div>
               </div>
             </div>
             <p className="max-w-sm text-slate-600">
