@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SiteNav } from "@/components/shared/site-nav";
+import { StudentDepartmentDirectory } from "@/components/students/student-department-directory";
 
 export const metadata = {
   title: "Students | Faculty of Technology, University of Delhi",
@@ -66,17 +67,10 @@ const topRecruiters = [
   "TCS", "Infosys", "Wipro", "Accenture", "NTPC", "BHEL", "ITC Infotech",
 ];
 
-const placements = [
-  { label: "Placement Rate", value: "97%+", icon: "📈" },
-  { label: "Highest Package", value: "₹42 LPA", icon: "💰" },
-  { label: "Average Package", value: "₹8.6 LPA", icon: "📊" },
-  { label: "Companies Visited", value: "80+", icon: "🏢" },
-];
-
 export default function StudentsPage() {
   return (
     <div className="relative flex min-h-screen flex-col bg-[#FDFBF7] text-slate-900">
-      <SiteNav activePage="students" />
+      <SiteNav activePage="students" studentsSubPage="directory" />
 
       <main className="max-w-7xl mx-auto px-6 py-12 w-full">
 
@@ -113,21 +107,7 @@ export default function StudentsPage() {
           </div>
         </div>
 
-        {/* Placement Stats */}
-        <section className="mb-16">
-          <div className="rounded-xl bg-maroon text-white p-8">
-            <h2 className="font-serif text-2xl font-bold mb-8 text-center text-gold uppercase tracking-widest">Placement Highlights 2024–25</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {placements.map((p) => (
-                <div key={p.label}>
-                  <p className="text-3xl mb-1">{p.icon}</p>
-                  <p className="text-4xl font-black text-gold">{p.value}</p>
-                  <p className="text-xs uppercase tracking-widest font-bold mt-2 opacity-80">{p.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StudentDepartmentDirectory />
 
         {/* Achievements Section */}
         <section id="achievements" className="mb-16">
@@ -192,8 +172,13 @@ export default function StudentsPage() {
       <footer className="bg-maroon/5 border-t border-maroon/10 py-12 px-6 mt-auto">
         <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="col-span-1 md:col-span-2">
-            <div className="h-14 w-45 overflow-hidden rounded-lg border border-maroon/20 bg-white px-2 py-1 mb-4">
-              <Image src="/fo_logo.png" alt="FoT logo" width={180} height={56} className="h-full w-full object-contain" />
+            <div className="mb-4 inline-flex items-center gap-2 rounded-lg border border-maroon/20 bg-white px-2 py-2 shadow-sm">
+              <div className="h-12 w-10 overflow-hidden rounded-md bg-white">
+                <Image src="/Du_logo.png" alt="Delhi University logo" width={64} height={72} className="h-full w-full object-contain" unoptimized />
+              </div>
+              <div className="h-12 w-16 overflow-hidden rounded-md bg-white">
+                <Image src="/fot_logo_new.png" alt="Faculty of Technology logo" width={96} height={72} className="h-full w-full object-contain" unoptimized />
+              </div>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed max-w-sm">
               Empowering students to innovate, lead, and make a difference since 1952.

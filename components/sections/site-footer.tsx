@@ -7,8 +7,13 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="h-8 w-8 overflow-hidden rounded-full border border-maroon/20 bg-white">
-                <Image src="/fo_logo.png" alt="FoT logo" width={32} height={32} className="h-full w-full object-cover" />
+              <div className="inline-flex items-center gap-2 rounded-lg border border-maroon/20 bg-white px-2 py-2 shadow-sm">
+                <div className="h-10 w-8 overflow-hidden rounded-md bg-white">
+                  <Image src="/Du_logo.png" alt="Delhi University logo" width={52} height={60} className="h-full w-full object-contain" unoptimized />
+                </div>
+                <div className="h-10 w-14 overflow-hidden rounded-md bg-white">
+                  <Image src="/fot_logo_new.png" alt="Faculty of Technology logo" width={84} height={60} className="h-full w-full object-contain" unoptimized />
+                </div>
               </div>
               <span className="font-serif text-maroon font-bold text-lg">Faculty of Technology</span>
             </div>
